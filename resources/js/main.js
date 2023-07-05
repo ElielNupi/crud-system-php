@@ -96,7 +96,6 @@ function editFun(id){
 
 function deleteFun(id){
     if(confirm('Deseja deletar este usuário?') == true){
-        //alert("Usuário deletado com sucesso!")
         $.ajax({
             url: base_url + "/Usuarios/deleteUsuario",
             method: "post",
