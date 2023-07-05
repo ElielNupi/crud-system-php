@@ -31,8 +31,6 @@ class Home extends CI_Controller {
 			
 			<a href="#" class="delete" onclick="deleteFun('.$value['id'].')"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>';
 
-			/*$actionButton = '<a class="btn-sm btn-success text-light" onclick="editFun('.$value['id'].')" href="#"> Edit</a>';*/
-			
 			$result['data'][] = array(
 				$value['id'],
 				$value['nome'],
