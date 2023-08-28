@@ -1,0 +1,3 @@
+var exportacao = new Vue ({
+    
+})

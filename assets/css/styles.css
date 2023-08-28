@@ -1,0 +1,243 @@
+.bg-primaria {
+  background-color: #425a03 !important;
+}
+
+.text-primaria {
+  background-color: #425a03 !important;
+}
+
+.bg-secundaria {
+  background-color: #96bc33 !important;
+}
+
+.text-secundaria {
+  background-color: #96bc33 !important;
+}
+
+.bg-background {
+  background-color: #eee !important;
+}
+
+.text-background {
+  background-color: #eee !important;
+}
+
+.text-alert {
+  background-color: rgba(219, 53, 47, 0.733) !important;
+}
+
+.btn-primaria {
+  background-color: #425a03 !important;
+}
+
+.btn-secundaria {
+  background-color: #96bc33 !important;
+}
+
+html,
+body {
+  font-family: Nunito, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+  color: black;
+  font-size: 14.5px;
+}
+html .nav-wrapper .btn-large,
+body .nav-wrapper .btn-large {
+  margin: 5px;
+  border-radius: 35px;
+}
+html .breadcrumb,
+body .breadcrumb {
+  margin: 10px;
+}
+html .dropdown-content,
+body .dropdown-content {
+  min-width: 160px;
+  z-index: 100001;
+}
+html .dropdown-content.select-dropdown,
+body .dropdown-content.select-dropdown {
+  max-height: 250px;
+  overflow-y: auto;
+}
+html .dropdown-content li > a,
+body .dropdown-content li > a {
+  position: relative;
+  z-index: 10000;
+}
+html .dark-mode,
+body .dark-mode {
+  transition: color 1s ease, background-color 1s ease;
+  background-color: #202123;
+  color: white;
+}
+html .dark-mode .circle,
+body .dark-mode .circle {
+  filter: invert(1);
+}
+html .dark-mode .input-field,
+body .dark-mode .input-field {
+  color: #eee;
+}
+html .dark-mode .collapsible-header,
+body .dark-mode .collapsible-header {
+  transition: color 1s ease, background-color 1s ease;
+  background-color: #121213;
+  color: white;
+}
+html .dark-mode .paginacao,
+body .dark-mode .paginacao {
+  background-color: #121213;
+  color: white;
+}
+html .dark-mode .paginacao .select-dropdown,
+body .dark-mode .paginacao .select-dropdown {
+  color: white;
+}
+html .dark-mode .collection-item,
+body .dark-mode .collection-item {
+  background-color: #202123;
+  color: white;
+}
+html .dark-mode .bg-primaria,
+body .dark-mode .bg-primaria {
+  background-color: #0a0a0a !important;
+}
+html .dark-mode .bg-secundaria,
+body .dark-mode .bg-secundaria {
+  background-color: #5a5c5f !important;
+}
+html .dark-mode .btn-primaria,
+body .dark-mode .btn-primaria {
+  background-color: #769230;
+  color: #121213;
+}
+html .dark-mode .btn-secundaria,
+body .dark-mode .btn-secundaria {
+  background-color: #97bb3b;
+  color: #121213;
+}
+html .light-mode,
+body .light-mode {
+  transition: color 1s ease, background-color 1s ease;
+  background-color: #eee;
+  color: black;
+}
+
+.modal {
+  overflow-x: hidden;
+  z-index: 10000 !important;
+}
+.modal > .modal-header > h4 {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background-color: #96bc33;
+  color: #eee;
+  padding: 10px 40px 10px 10px;
+  font-size: 24px;
+}
+.modal > .modal-header > h4 span {
+  position: absolute;
+  right: 10px;
+}
+.modal .modal-header .modal-close {
+  background-color: #fff;
+  right: 10px;
+  width: 28px;
+  height: 24px;
+  text-align: center;
+  border-radius: 5px;
+}
+.modal .modal-header .modal-close .fa-window-close {
+  cursor: pointer;
+  color: red;
+  border: solid 3px #fff;
+  border-radius: 4px;
+}
+.modal .modal-content h4 {
+  font-size: 24px;
+}
+.modal .container {
+  width: 100% !important;
+}
+.modal .tabs {
+  display: contents;
+}
+
+.nav-extended {
+  color: green;
+}
+
+li.active > .collapsible-header:after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+li.active li {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+#card-usuarios {
+  display: flex;
+  flex-direction: column;
+}
+
+#btn-opcoes {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  max-height: 200%;
+  max-width: 200;
+}
+
+#listandoUsuarios {
+  width: 100%;
+  eight: 100%;
+}
+
+#btn-adicionar {
+  border-radius: 35px;
+}
+
+#molduraUsuario {
+  text-decoration: none;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#carregando {
+  position: fixed;
+  z-index: 40000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+#carregando span {
+  font-size: 50px;
+  text-align: center;
+  top: 45%;
+  position: absolute;
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,62 +1,44 @@
-<template>
-  <div id="modal_add_usuario" class="modal">
-  <form id="createForm">
-        <div class="row">
+<div class="row modal" id="modalAddUsuario">
+    <form class="col s12" ref="form" @submit.prevent>
+        <div class="modal-header bg-secundaria text-white">
+            <span><a class="modal-close" href="#"><i class="material-icons text-alert white-text right">close</i></a></span>
+            <h4 class="white-text"> Inserir novo Usuário </h4>
+        </div>
+        <div class="modal-content">
             <div class="row">
                 <div class="input-field col s6">
-                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
+                    <input id="first_name" type="text" v-model="usuario.nome" class="validate">
+                    <label for="first_name">Nome Completo</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                    <label for="disabled">Disabled</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
+                    <input id="email" placeholder="seuemail@mail.com" v-model="usuario.email" type="email"
+                        class="validate">
                     <label for="email">Email</label>
                 </div>
             </div>
             <div class="row">
-                <div class="col s12">
-                    This is an inline input field:
-                    <div class="input-field inline">
-                        <input id="email_inline" type="email" class="validate">
-                        <label for="email_inline">Email</label>
-                        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                    </div>
+                <div class="input-field col s12">
+                    <input id="telefone" type="text" placeholder="(00) 00 00000-0000" v-model="usuario.telefone">
+                    <label for="password">Telefone</label>
                 </div>
             </div>
-            <div class="btn-confirma">
-				<input type="button" class="btn btn-success" value="Confirmas?" @click="showModal = false">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="dtp" placeholder="00/00/0000" type="text" class="datepicker"
+                        v-model="usuario.dt_nascimento" @change="mudouData($event, 'usuario.dt_nascimento')">
+                    <label for="disabled">Data Nascimento</label>
+                </div>
             </div>
         </div>
+        <div class="modal-footer">
+            <a class="waves-effect waves-light red darken-4 btn modal-close"><i class=" material-icons left">close</i>
+                Cancelar</a>
+            <button class="btn waves-effect waves-light green darken-3 modal-close" @click="cadastrar"
+                name="action">Cadastrar
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
     </form>
-  </div>
-</template>
-
-<script>
-export default {
-  methods: {
-    openModal() {
-      this.$el.style.display = 'block';
-    },
-    closeModal() {
-      this.$el.style.display = 'none';
-    }
-  }
-}
-</script>
+</div>

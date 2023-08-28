@@ -6,5 +6,8 @@
     "vue": "^2.7.0",
     "vue-js-modal": "^2.0.1",
     "vue-router": "^3.6.5"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }

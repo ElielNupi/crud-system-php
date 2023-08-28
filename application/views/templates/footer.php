@@ -1,5 +1,3 @@
-<!-- VUE JS + jQuery -->
-
 <?php
 
 	$type = 'text/javascript';
@@ -10,7 +8,18 @@
 			echo '<script src="' . $js . $random . '"type="'. $type . '"></script>' . "\n";
 		}
 	}
-?>
-</body>
 
+	if (isset($params['js_extra']) && is_array(['js_extra'])) {
+		foreach ($params['js_extra'] as $js) {
+			echo '<script src="' . $js . $random . '"type="'. $type . '"></script>' . "\n";
+		}
+	}
+?>
+
+<!-- Init materialize JS -->
+<script src="./assets/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<!-- Jquery Mask plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+</body>
 </html>
