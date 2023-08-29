@@ -40,10 +40,10 @@
 				</p>
 
                 <div>
-					<a class="waves-effect waves-light btn btn-primaria" name="importarSubmit"><i class="material-icons left">arrow_back
+					<a href="<?php base_url("")?> Home" class="waves-effect waves-light btn btn-primaria" name="importarSubmit"><i class="material-icons left">arrow_back
 					</i>Voltar à Tela Inicial</a>
 
-					<a class="waves-effect waves-light btn btn-secundaria" name="importarSubmit"><i class="material-icons left">autorenew
+					<a href="#" class="waves-effect waves-light btn btn-secundaria" name="importarSubmit"><i class="material-icons left">autorenew
 					</i>Apagar e Importar</a>
 
                 </div>

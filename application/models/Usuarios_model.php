@@ -58,6 +58,17 @@ class Usuarios_model extends CI_Model
 
 		return $result;
 	}
+
+	public function importar ($tablename, $data) {
+		try {
+			$this->db->insert($tablename, $data);
+			$result = "ok";
+		} catch(Exception $e){
+			$result = "ERRO DATABASE: ". $e->getMessage() . "\n";
+		}
+
+		return $result;
+	}
 }
 
 /* End of file Usuarios_model.php */

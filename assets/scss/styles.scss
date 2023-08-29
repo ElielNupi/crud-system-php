@@ -54,6 +54,10 @@ body {
 	color: black;
 	font-size: 14.5px;
 	
+	blockquote {
+		border-left: 5px solid $primaria;
+	}
+
 	.nav-wrapper {
 		.btn-large {
 			margin:5px;

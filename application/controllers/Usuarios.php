@@ -129,6 +129,13 @@ class Usuarios extends CI_Controller
 
         return $retorno;
     }
+	public function importarCSV ()
+	{
+		$dados = json_decode($this->input->raw_input_stream);
+		// Usar a library aqui
+		$this->load->library("PhpSpreadsheet", NULL, "formatar");
+		$this->formatar->formatandoToCsv();
+	}
     public function exportarCSV()
     {
         $this->load->model('Usuarios_model', 'usuario');
@@ -136,10 +143,10 @@ class Usuarios extends CI_Controller
         $currentDate = $currentDateTime->format('Y-m-d');
         echo $currentDate;
 
-        // dados dos usuários do banco de dados
+        // Dados dos usuários do banco de dados
         $usuarios = $this->usuario->getUsuarios('*', 'usuarios', array() , '25', '0'); // Substitua com o método apropriado do seu modelo
 
-        // cabeçalhos do arquivo CSV
+        // Cabeçalhos do arquivo CSV
         $csvData = "Id, Nome, Email, Data Nascimento, Telefone\n";
 
         // Preenchendo os dados do CSV
@@ -157,6 +164,22 @@ class Usuarios extends CI_Controller
         exit;
     }
 
+	public function apagarTodosUsuarios() {
+
+		$load->this->model("Usuarios_model", "usuarios");
+		$apagando = $this->load->usuarios->deleteAllUsuarios ("usuarios");
+		
+		if ($apagando == "ok"){
+			$data = array ("
+				'status': 'alive'
+			");
+		} else {
+			$data = array ("
+				'status' : 'death'
+			");
+		}
+		return $data;
+	}
     private function _saida($out)
     {
         header('Content-Type: application/json');
