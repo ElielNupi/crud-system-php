@@ -18,10 +18,6 @@ var vm_importacao = new Vue ({
           },
 
         subirArquivo: function() {
-            var dados = {
-                arquivo: this.arquivo
-            };
-
             this.uploadArquivo (this.arquivo).then((resposta) => {
                 carregando(true);
             });

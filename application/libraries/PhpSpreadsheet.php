@@ -42,7 +42,6 @@ class PhpSpreadSheet
 						echo $nome;
 						echo $email;
 						// nome, email, telefone, dt_nascimento
-						
 						$this->usuarios->importar("usuarios", array (
 							"nome" => $nome, 
 							"telefone" => $telefone, 

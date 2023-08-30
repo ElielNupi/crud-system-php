@@ -86,14 +86,14 @@ class Usuarios extends CI_Controller
     {
         $this->load->model("Usuarios_model", "usuario");
 
-        	//resgatando valores vindo do js
-			$nome = $dados->{"nome"};
-			$pagina = $dados->{"pagina"};
-			$por_pagina = $dados->{"por_pagina"};
-			$tipo_busca = $dados->{"tipo"};
+        //resgatando valores vindo do js
+        $nome = $dados->{"nome"};
+        $pagina = $dados->{"pagina"};
+        $por_pagina = $dados->{"por_pagina"};
+        $tipo_busca = $dados->{"tipo"};
 
         if ($tipo_busca == 'por_nome') {
-			
+
             // buscando linhas do banco para definir paginas
             $total_linhas = $this->usuario->getAllporNome("usuarios", array('nome' => $nome));
             $proximo_index_pagina = ($pagina > 1 ? ($pagina - 1) * $por_pagina : 0);
@@ -129,13 +129,13 @@ class Usuarios extends CI_Controller
 
         return $retorno;
     }
-	public function importarCSV ()
-	{
-		$dados = json_decode($this->input->raw_input_stream);
-		// Usar a library aqui
-		$this->load->library("PhpSpreadsheet", NULL, "formatar");
-		$this->formatar->formatandoToCsv();
-	}
+    public function importarCSV()
+    {
+        $dados = json_decode($this->input->raw_input_stream);
+        // Usar a library aqui
+        $this->load->library("PhpSpreadsheet", null, "formatar");
+        $this->formatar->formatandoToCsv();
+    }
     public function exportarCSV()
     {
         $this->load->model('Usuarios_model', 'usuario');
@@ -144,7 +144,7 @@ class Usuarios extends CI_Controller
         echo $currentDate;
 
         // Dados dos usuários do banco de dados
-        $usuarios = $this->usuario->getUsuarios('*', 'usuarios', array() , '25', '0'); // Substitua com o método apropriado do seu modelo
+        $usuarios = $this->usuario->getUsuarios('*', 'usuarios', array(), '25', '0'); // Substitua com o método apropriado do seu modelo
 
         // Cabeçalhos do arquivo CSV
         $csvData = "Id, Nome, Email, Data Nascimento, Telefone\n";
@@ -164,22 +164,42 @@ class Usuarios extends CI_Controller
         exit;
     }
 
-	public function apagarTodosUsuarios() {
-
-		$load->this->model("Usuarios_model", "usuarios");
-		$apagando = $this->load->usuarios->deleteAllUsuarios ("usuarios");
+    public function apagarTodosUsuarios()
+    {
+        $dados = json_decode($this->input->raw_input_stream);
+        $confirmacao = $dados->{"confirm"};
 		
-		if ($apagando == "ok"){
-			$data = array ("
-				'status': 'alive'
-			");
-		} else {
-			$data = array ("
-				'status' : 'death'
-			");
-		}
-		return $data;
-	}
+        if ($confirmacao == 1) {
+            $this->load->model("Usuarios_model", "usuarios");
+            $apagando = $this->usuarios->deleteAllUsuarios ("usuarios");
+
+            if ($apagando == "ok") {
+                $data = array(
+                    'status' => 'ok',
+                );
+            } else { // erro no banco de dados
+                $data = array(
+                    'status' => 'error',
+					'error' => 'erro de delecao no banco de dados'
+                );
+            }
+            $retorno = array(
+                'data' => $data,
+            );
+
+        } else { // erro de confirmacao, impedir delecao sem confirmacao do usuario
+			$data = array (
+				'status' => 'error',
+				'msg' => 'erro de confirmacao'
+			);
+
+			$retorno = array (
+				'data' => $retorno
+			);
+        }
+
+        return $retorno;
+    }
     private function _saida($out)
     {
         header('Content-Type: application/json');

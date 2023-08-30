@@ -21,20 +21,22 @@
             <strong>3 .</strong> Preencha cada coluna com os dados dos usuários, respeitando os cabeçalhos indicados.
             <br> <br>
             <strong>4 .</strong> Salve o arquivo no formato .CSV quando tiver preenchido todos os detalhes. <br> <br>
-            <strong>5 .</strong> Volte a esta página de importação e clique no botão "Escolher arquivo" abaixo. <br> <br>
+            <strong>5 .</strong> Volte a esta página de importação e clique no botão "Escolher arquivo" abaixo. <br>
+            <br>
             <strong>6 .</strong> Selecione o arquivo .CSV que você criou e clique em "Enviar". <br> <br>
             <strong>7 .</strong> Nossa ferramenta cuidará do resto e você será notificado quando a importação for
             concluída com sucesso! <br> <br>
         </blockquote>
         </p>
     </div>
-    <div>
-        <form enctype="multipart/form-data" @submit.prevent>
-            <input type="file" id="myFile" accept=".csv" name="filename" @change="arquivoChange($event)">
-            <br> <br>
-            <a class="waves-effect waves-light btn btn-primaria" name="importarSubmit" @click="subirArquivo"><i class="material-icons left">file_upload
-                </i>Enviar</a>
-        </form>
+	
+    <?= form_open_multipart('Importacao/Upload', array('class' => 'row no-margin-bottom'));?>
+    <div class="col s12">
+        <input type="file" id="myFile" name="arquivo">
+        <br> <br>
+        <button type="submit" class="btn-small green waves-effect" onclick="carregando(true)">
+            <i class="material-icons left">file_upload</i>Enviar
+        </button>
     </div>
-
+    <?= form_close() ?>
 </div>
