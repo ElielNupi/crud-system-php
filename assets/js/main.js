@@ -51,8 +51,7 @@ function ativarComponentes() {
 		$('.dropdown-trigger').dropdown();
 
 		$('#telefone').mask('(00) 0 0000-0000');
-		$('#editTelefone').mask('(00) 0 0000-0000');
-
+		
 		$('.dark-toggle').on('click', function () {
 			if ($(this).find('i').text() == 'brightness_4') {
 				$(this).find('i').text('brightness_high');

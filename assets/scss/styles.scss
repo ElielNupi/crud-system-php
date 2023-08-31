@@ -53,9 +53,9 @@ body {
 	background-color: #eee;
 	color: black;
 	font-size: 14.5px;
-	
+
 	blockquote {
-		border-left: 5px solid $primaria;
+		border-left: 5px solid $secundaria;
 	}
 
 	.nav-wrapper {
@@ -89,7 +89,6 @@ body {
 		transition: $transition-effects;
 		background-color: #202123;
 		color: white;
-
 		.circle {
 			filter: invert(1);
 		}
