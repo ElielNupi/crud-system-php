@@ -69,6 +69,7 @@ class Usuarios_model extends CI_Model
 
 		return $result;
 	}
+
 }
 
 /* End of file Usuarios_model.php */

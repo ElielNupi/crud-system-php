@@ -1,5 +1,5 @@
 <div id="preImportacaoUsuarios">
-	<?php $this->load->helper('form'); ?>
+    <?php $this->load->helper('form'); ?>
     <div class="s12 m4 l8">
         <nav>
             <div class="nav-wrapper bg-secundaria">
@@ -12,9 +12,9 @@
             <div class="col s12">
                 <p class="flow-text">
                 <blockquote>
-                    <h5><strong> &#128229 Importação de Banco de Dados via Arquivo CSV</strong></h5>
+                    <h5><strong> Atenção: Aviso de pré-importação </strong></h5>
 
-                    <p><strong>Importante:</strong> Antes de prosseguir com a importação, é necessário realizar uma
+                    <p> Antes de prosseguir com a importação, é necessário realizar uma
                         etapa
                         importante para garantir a integridade dos dados. Nós identificamos que já existem registros
                         cadastrados no banco de dados atual do sistema. Para evitar conflitos e garantir que sua
@@ -26,7 +26,7 @@
                         atualmente armazenadas no sistema serão permanentemente excluídas. Certifique-se de ter feito o
                         backup necessário, pois essa ação não poderá ser desfeita.</p>
 
-                    <h5>Como proceder:</h5>
+                    <h6>Como proceder:</h6>
                     <ol>
                         <li>Selecione a opção desejada abaixo:</li>
                         <ul>
@@ -52,11 +52,12 @@
                             </i>Voltar à Tela Inicial</a>
 
                         <a href="#modalAviso" class="waves-effect waves-light btn modal-trigger btn-secundaria"
-                            name="importarSubmit"><i class="material-icons left">autorenew
-                            </i>Apagar e Importar</a>
+                            name="importarSubmit"><i class="material-icons left">delete
+                            </i>Apagar todos os registros</a>
 
                     </div>
                     </p>
+                </blockquote>
             </div>
         </div>
 
@@ -75,8 +76,8 @@
             <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect bg-primaria btn-flat white-text"><i
                         class="material-icons right">close</i>Cancelar</a>
-                <a href="#!" class="modal-close waves-effect bg-secundaria btn-flat white-text" @click="confirmaDelecao()"><i
-                        class="material-icons right">check</i>Confirmar</a>
+                <a href="#!" class="modal-close waves-effect bg-secundaria btn-flat white-text"
+                    @click="confirmaDelecao()"><i class="material-icons right">check</i>Confirmar</a>
             </div>
         </div>
     </div>
